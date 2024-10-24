@@ -1,6 +1,6 @@
 async function fetchAndDisplayGames() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch('https://your-api-host.com/api/games'); // Променете на публичния адрес
         if (!response.ok) {
             throw new Error(`Error fetching games: ${response.statusText}`);
         }
@@ -15,7 +15,6 @@ async function fetchAndDisplayGames() {
                 <p>App ID: ${game.appid}</p>
             `;
 
-            // Зареждане на изображението
             const img = new Image();
             img.src = `https://steamcdn-a.akamaihd.net/steam/apps/${game.appid}/header.jpg`;
             img.onload = () => {
